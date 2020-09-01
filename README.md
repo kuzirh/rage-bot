@@ -17,7 +17,7 @@ SO this is literally the only thing that RAGE-bot did, and he was damn good at i
 - A script that polls messages on a specific channel in a discord server
   - The message would then be parsed to make sure that the contents of the message were all caps. If it wasn't, then the message would be deleted and a custom bot messagea appears to remind users that this channel is for RAGE.
 - Would like to store the messages that were deleted either in a database (DynamoDB) or in S3 as a CSV file
-- Would like to convert the architecture from being a script running on an EC2 instance to completely serveless
+- ~~Would like to convert the architecture from being a script running on an EC2 instance to completely serveless~~ (OBE Since Discord does not allow for outgoing webhooks, so integration with API Gateway + Lambda is not possible atm.)
 - Would like to convert the project from python to TypeScript/Nodejs
 - Would like to add some sort of sentiment analysis to the deleted messages to see how vile the messages can be. This can be used down the line to give users custom roles based on message sentiment score.
 
