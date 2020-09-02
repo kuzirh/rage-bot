@@ -7,3 +7,9 @@ Resources:
       ImageId: ami-02354e95b39ca8dec
       InstanceType: t2.micro
       KeyName: discord
+      UserData: !Base64 |
+        #!/bin/bash
+        sudo yum -y update
+        sudo yum install -y git
+        sudo yum install -y nodejs12
+        sudo git clone https://github.com/kuzirh/rage-bot.git
