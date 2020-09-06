@@ -1,17 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Ec2 instance that will host the discord script
-Parameters:
-  KeyPairName:
-    Type: String
-    Description: The name of the key pair that was created prior to standing up this instance. If this hasn't been created go and create it and come back.
 Resources:
   RageContainer:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-02354e95b39ca8dec
       InstanceType: t2.micro
-      KeyName:
-        Fn::Sub: KeyPairName
+      KeyName: rage-bot
       UserData: !Base64 |
         #!/bin/bash
         sudo yum -y update

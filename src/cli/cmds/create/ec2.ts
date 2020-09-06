@@ -35,7 +35,7 @@ exports.handler = async (argv: args) => {
   let WHO_AM_I = config[argv.region][argv.environment].WHO_AM_I;
   let { region, environment } = argv;
   var params = {
-    StackName: `${WHO_AM_I}-${region}-${environment}-RageContainer` /* required */,
+    StackName: `${WHO_AM_I}-${region}-${environment}-RageContainer`,
     TemplateBody: template,
   };
   try {
