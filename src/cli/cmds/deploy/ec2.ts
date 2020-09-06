@@ -1,7 +1,9 @@
 'use strict';
-let AWS = require('aws-sdk');
+
+var AWS = require('aws-sdk');
 let fs = require('fs');
 const path = require('path');
+
 exports.command = 'deploy ec2 <region> <environment>';
 exports.desc = 'bp teardown and clean up for resources deployed to cloud';
 exports.builder = {
