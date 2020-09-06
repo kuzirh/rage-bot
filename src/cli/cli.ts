@@ -3,6 +3,6 @@
 
 require('yargs')
   .usage('\nGet mad, then get over it.”\n')
-  .commandDir('./cmds/deploy')
+  .commandDir('./cmds/create')
   .demandCommand()
   .help().argv;
