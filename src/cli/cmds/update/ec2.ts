@@ -6,9 +6,9 @@ var path = require('path');
 var config = require(path.resolve('./config.js'));
 var Creds = require('../../../scripts/SetProfile');
 
-exports.command = 'create ec2 <region> <environment>';
+exports.command = 'update ec2 <region> <environment>';
 exports.desc =
-  'rage-bot automation for creating ec2 instance that hosts the bot.';
+  'rage-bot automation for updating ec2 instance that hosts the bot.';
 exports.builder = {
   region: {
     describe: 'region deployment is happening in (pub/gov)',
@@ -35,16 +35,17 @@ exports.handler = async (argv: args) => {
     .toString();
   let WHO_AM_I = config[argv.region][argv.environment].WHO_AM_I;
   let { region, environment } = argv;
+
   var params = {
     StackName: `${WHO_AM_I}-${region}-${environment}-RageContainer`,
     TemplateBody: template,
   };
   try {
-    await cloudformation.createStack(params).promise();
+    await cloudformation.updateStack(params).promise();
   } catch (error) {
     console.warn(
       {
-        message: 'There was an error creating the ec2 stack',
+        message: 'There was an error updating the ec2 stack',
         params,
         template,
       },

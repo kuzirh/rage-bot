@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Ec2 instance that will host the discord script
+Description: Ec2 instance that will host the discord script, testing updating the stack
 Resources:
   RageContainer:
     Type: AWS::EC2::Instance
